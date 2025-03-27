@@ -21,6 +21,9 @@
 .header {
   padding-bottom: 64px;
   width: 65%;
+
+  position: relative;
+  z-index: 1;
 }
 
 .title {
@@ -42,8 +45,34 @@
   top: 15%;
   bottom: 5%;
   min-height: 500px;
+
+  z-index: 2;
 }
 
 .controlColumn {
   width: 50%;
+}
+
+@media (max-width: 800px) {
+  .characterWrapper {
+    position: static;
+    z-index: 1;
+  }
+
+  .controlColumn {
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+
+    width: unset;
+
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .controlColumnWrapper {
+    overflow-x: auto;
+    border: 1px solid red;
+  }
 }
