@@ -1,13 +1,29 @@
 .characterEditor {
   padding-top: 128px;
   padding-bottom: 64px;
+
+  position: relative;
+}
+
+.overlay {
+  background-color: hsl(195deg, 20%, 86%);
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+  height: 40%;
 }
 
 .maxWidthWrapper {
+  position: relative;
 }
 
 .header {
   padding-bottom: 64px;
+  width: 65%;
+
+  position: relative;
+  z-index: 1;
 }
 
 .title {
@@ -24,7 +40,39 @@
 }
 
 .characterWrapper {
+  position: fixed;
+  left: 60%;
+  top: 15%;
+  bottom: 5%;
+  min-height: 500px;
+
+  z-index: 2;
 }
 
 .controlColumn {
+  width: 50%;
+}
+
+@media (max-width: 800px) {
+  .characterWrapper {
+    position: static;
+    z-index: 1;
+  }
+
+  .controlColumn {
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+
+    width: unset;
+
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .controlColumnWrapper {
+    overflow-x: auto;
+    border: 1px solid red;
+  }
 }
